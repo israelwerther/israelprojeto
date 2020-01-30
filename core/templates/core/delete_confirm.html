@@ -4,12 +4,15 @@
 
     <h2>Tem certeza que quer deletar: {{ obj }}</h2>
 
+<div class="row">   
+    <div class="col">
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Deletar</button>
 
-    <form method="POST">
-        {% csrf_token %}
-        <button type="submit">Deletar</button>
-
-    </form>
+        </form>
+    </div>
+</div>
 
 {% endblock %}
 

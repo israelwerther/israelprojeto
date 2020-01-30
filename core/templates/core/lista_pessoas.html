@@ -10,7 +10,6 @@
 </div>
 
 <div class="row">
-
     <div class="col-sm-6">
         <form action="{% url 'core_pessoa_novo' %}" method="POST">
             {% csrf_token %} <!--Protege de ataques do tipo csrf -->
@@ -30,7 +29,6 @@
             {% endfor %}
         </ul>
     </div>
-
 </div>       
 
 {% endblock %}
