@@ -47,16 +47,32 @@
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
     </div>
-    <div class="col-sm-6">
-        <ul>
+    <div class="col-sm-6">       
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Checkin</th>
+                    <th scope="col">Checkout</th>
+                    <th scope="col">Valor_hora</th>
+                    <th scope="col">Veiculo</th>
+                    <th scope="col">Pago</th>
+                </tr>
+            </thead>
+            <tbody>
             {% for mov in mov_rot %}
-            <li> 
-                <a href="{% url 'core_movrotativos_update' mov.id %}"> 
-                    {{ mov.checkin }} - {{ mov.veiculo.placa }} 
-                </a> 
-            </li>        
-            {% endfor %}
-        </ul>
+                <tr>
+                    <th scope="row">{{ mov.id }}</th>
+                    <td>{{ mov.checkin }}</td>
+                    <td>{{ mov.checkout }}</td>
+                    <td>{{ mov.valor_hora }}</td>
+                    <td>{{ mov.veiculo }}</td>
+                    <td>{{ mov.pago }}</td>
+                </tr>    
+            {% endfor %}         
+            </tbody>
+        </table> 
+
     </div>
 </div>
 

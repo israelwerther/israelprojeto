@@ -47,16 +47,27 @@
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
     </div>
-    <div class="col-sm-6">
-        <ul>
-            {% for mov in mov_mensalistas %}
-            <li> 
-                <a href="{% url 'core_movmensalista_update' mov.id %}">
-                    {{ mov.mensalista }} - {{ mov.dt_pgto }} 
-                </a> 
-            </li>                 
-            {% endfor %}
-        </ul>
+    <div class="col-sm-6">       
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Mensalista</th>
+                    <th scope="col">Data de Pagamento</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for mov in mov_mensalistas %} 
+                <tr>
+                    <th scope="row">{{ mov.id }}</th>
+                    <td>{{ mov.mensalista }}</td>
+                    <td>{{ mov.dt_pgto }}</td>
+                    <td>R${{ mov.total }}</td>
+                </tr>    
+            {% endfor %}         
+            </tbody>
+        </table> 
     </div>
 </div>
 
