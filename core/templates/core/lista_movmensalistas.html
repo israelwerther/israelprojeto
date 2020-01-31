@@ -20,11 +20,24 @@
             </div>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
+
+        {% if user.is_authenticated %}
         <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a class="nav-link disabled" href="">Olá {{ user }}</a>
+        </li>         
+
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+        {% endif %}
+        
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
         </li>
+
     </ul>
   
 {% endblock %}

@@ -53,6 +53,6 @@ urlpatterns = [
     path('mov-mensal-novo/', movmensalista_novo, name='core_movmensalista_novo'),
     path('mov-mensal-update/<int:id>', movmensalista_update, 
         name='core_movmensalista_update'),
-    path('mov-mensal-delete/<int:id>', movmensalista_delete, name='core_movmensalista_delete'),
+    path('mov-mensal-delete/<int:id>', movmensalista_delete, name='core_movmensalista_delete'),    
 ]
     

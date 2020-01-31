@@ -17,13 +17,23 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Separated link</a>
             </div>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="">Logout</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
+        </li>       
+
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link disabled" href="">Olá {{ user }}</a>
+            </li>  
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+        {% endif %}
+       
     </ul>
   
 {% endblock %}
@@ -32,8 +42,7 @@
 
     <div class="row">
         <div class="col">
-            <h1>Seja bem vindo ao sistema</h1>
-            <a href="/admin">Clique aqui para em administrador</a>
+            <h1>Seja bem vindo ao sistema</h1>           
         </div>
     </div>
 
