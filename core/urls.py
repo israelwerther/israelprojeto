@@ -20,7 +20,7 @@ from .views import (
     veiculo_delete,
     movrotativos_delete,
     mensalista_delete,
-    movmensalista_delete
+    movmensalista_delete    
 )
 
 urlpatterns = [
@@ -30,6 +30,7 @@ urlpatterns = [
     path('pessoa-novo/', pessoa_novo, name='core_pessoa_novo'),
     path('pessoa-update/<int:id>', pessoa_update, name='core_pessoa_update'),
     path('pessoa-delete/<int:id>', pessoa_delete, name='core_pessoa_delete'),
+    path('pessoa-delete/<int:id>', pessoa_delete, name='core_pessoa_delete'),    
 
     path('veiculos/', lista_veiculos, name='core_lista_veiculos'),
     path('veiculo-novo/', veiculo_novo, name='core_veiculo_novo'),

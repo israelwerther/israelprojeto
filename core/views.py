@@ -54,7 +54,8 @@ def pessoa_delete(request, id):
         pessoa.delete()
         return redirect('core_lista_pessoas')
     else:
-        return render(request, 'core/delete_confirm.html', {'obj': pessoa})    
+        return render(request, 'core/delete_confirm.html', {'obj': pessoa})   
+
 
     #---------------------------------------------------------------------------------
 
